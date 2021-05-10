@@ -19,7 +19,6 @@ export class EyeComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     setInterval( _ => {
       if (this.closeLidLayer.nativeElement.style.opacity === '1') { return; } // do not close and then open if already closed
-      console.log('da');
       this.closeLidLayer.nativeElement.style.opacity = '1';
       setTimeout(() => this.closeLidLayer.nativeElement.style.opacity = '0', 300);
     }, 7 * 1000);
