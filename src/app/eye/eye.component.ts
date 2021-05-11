@@ -1,5 +1,6 @@
 import {Component, ElementRef, HostListener, AfterViewInit, ViewChild} from '@angular/core';
 import {EyeDirectionCalculationService} from '../shared/services/eye-direction-calculation.service';
+import {Coordinates} from '../shared/interfaces/coordinates.model';
 
 @Component({
   selector: 'app-eye',
@@ -12,7 +13,7 @@ export class EyeComponent implements AfterViewInit {
   @ViewChild('iris') iris: ElementRef;
   @ViewChild('closeLidLayer') closeLidLayer: ElementRef;
 
-  coordinates = [0, 0];
+  coordinates: Coordinates = {x: 0, y: 0};
 
   constructor(private eyeDirectionCalcService: EyeDirectionCalculationService) { }
 

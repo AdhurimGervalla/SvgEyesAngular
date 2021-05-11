@@ -1,16 +1,3 @@
-body {
-  margin: 0;
-  box-sizing: border-box;
-  width:  100%;
-  height: 100%;
-}
-
-app-eye {
-  position: absolute;
-  top:  100px;
-  left: 100px;
-}
-
 app-eye + app-eye {
   top:  100px;
   left: 250px;

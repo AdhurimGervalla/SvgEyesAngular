@@ -1,4 +1,5 @@
 import {ElementRef, Injectable} from '@angular/core';
+import {Coordinates} from '../interfaces/coordinates.model';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ export class EyeDirectionCalculationService {
 
   constructor() { }
 
-  calculateEyeDirection(evt: MouseEvent, el: ElementRef): [number, number] {
+  calculateEyeDirection(evt: MouseEvent, el: ElementRef): Coordinates {
     const rect = el.nativeElement.getBoundingClientRect();
 
     const xo = rect.x + rect.width / 2;  // x-origin
@@ -34,6 +35,6 @@ export class EyeDirectionCalculationService {
       ye *= 0.9;
     }
 
-    return [xe, ye];
+    return {x: xe, y: ye};
   }
 }
